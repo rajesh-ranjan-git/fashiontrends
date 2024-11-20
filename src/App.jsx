@@ -1,11 +1,11 @@
-import CardsContainer from "./components/CardsContainer";
+import { Outlet } from "react-router";
 import Navbar from "./components/navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <CardsContainer />
+      <Outlet />
     </>
   );
 }
