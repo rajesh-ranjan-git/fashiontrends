@@ -4,6 +4,9 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CardsContainer from "./components/CardsContainer.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
+import LoginSignup from "./auth/LoginSignup.jsx";
+import Wishlist from "./components/Wishlist.jsx";
+import Bag from "./components/Bag.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -15,8 +18,16 @@ const appRouter = createBrowserRouter([
         element: <CardsContainer />,
       },
       {
-        path: "/product/:productId",
-        element: <CardsContainer />,
+        path: "/loginSignup",
+        element: <LoginSignup />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
+      },
+      {
+        path: "/bag",
+        element: <Bag />,
       },
     ],
     errorElement: <ErrorPage />,

@@ -10,7 +10,7 @@ const ProfileDropdown = () => {
   };
 
   const handleLoginSignup = () => {
-    navigate("/login");
+    navigate("/loginSignup");
   };
 
   return (
@@ -22,7 +22,7 @@ const ProfileDropdown = () => {
         <h1 className="font-bold">Welcome</h1>
         <p>To access account and manage orders</p>
         <button
-          className="w-32 p-2 my-5 text-red-600 border rounded-sm hover:border-red-600"
+          className="w-32 p-2 my-5 text-pink-600 border rounded-sm hover:border-pink-600"
           onClick={handleLoginSignup}
         >
           <b>Login</b> / <b>Signup</b>
