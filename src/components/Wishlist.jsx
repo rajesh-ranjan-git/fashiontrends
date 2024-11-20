@@ -17,7 +17,7 @@ const Wishlist = () => {
         </p>
         <img
           className="m-2"
-          src="public\images\empty-bag.webp"
+          src="\images\empty-bag.webp"
           alt="wishlist-fallback-image"
         />
         <button
