@@ -7,6 +7,7 @@ import ErrorPage from "./components/ErrorPage.jsx";
 import LoginSignup from "./auth/LoginSignup.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import Bag from "./components/Bag.jsx";
+import ProductDetails from "./components/ProductDetails.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/bag",
         element: <Bag />,
+      },
+      {
+        path: "/productDetails",
+        element: <ProductDetails />,
       },
     ],
     errorElement: <ErrorPage />,

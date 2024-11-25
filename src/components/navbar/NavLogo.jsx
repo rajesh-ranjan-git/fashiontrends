@@ -9,9 +9,9 @@ const NavLogo = () => {
   };
 
   return (
-    <div className="flex h-full w-36">
+    <div className="flex h-full p-4 w-36">
       <img
-        className="w-20 h-auto cursor-pointer"
+        className="h-auto cursor-pointer"
         src="images/myntra_logo.webp"
         alt="shoppershub_logo"
         onClick={handleHomePage}

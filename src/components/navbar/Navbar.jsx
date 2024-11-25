@@ -6,7 +6,7 @@ import NavRightMenu from "./NavRightMenu";
 
 const Navbar = () => {
   return (
-    <header className="fixed flex items-center justify-between w-full h-16 px-10 bg-white shadow-md">
+    <header className="fixed z-10 flex items-center justify-between w-full h-20 px-10 bg-white shadow-md">
       <div className="flex items-center justify-around h-full ">
         <NavLogo />
         <NavMenu />
