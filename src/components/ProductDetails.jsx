@@ -2,48 +2,55 @@ import React from "react";
 import { IoMdStar } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CiDeliveryTruck } from "react-icons/ci";
+import { data } from "../data/data.js";
 
 const ProductDetails = () => {
+  const { product_id } = useParams();
+
   return (
     <div className="flex p-20 pb-16 x-10">
       <div className="w-[50vw] h-[80vh] flex justify-center items-center border rounded-md m-4 overflow-hidden">
         <div className="h-[80vh] overflow-hidden hover:scale-105 transition">
           <img
             className="h-[100%] object-cover"
-            src="images/men-shirt.webp"
+            src={data[product_id].cover_image}
             alt="prod_img"
           />
         </div>
       </div>
       <div className="w-[30vw] h-full m-4">
-        <h1 className="text-2xl font-semibold">CRISTIANO RONALDO</h1>
-        <h1 className="text-xl text-neutral-500">
-          CR7 Game On Eau de Toilette 100 ml
-        </h1>
+        <h1 className="text-2xl font-semibold">{data[product_id].title}</h1>
+        <h1 className="text-xl text-neutral-500">{data[product_id].brand}</h1>
         <button className="flex items-center justify-start w-auto px-1 mt-4 font-semibold border rounded-sm hover:border-black">
-          <span className="m-1">4.5</span>
+          <span className="m-1">{data[product_id].rating}</span>
           <IoMdStar className="text-green-600" />
           <span className="m-1 font-normal text-neutral-500">
             {" "}
-            | 140 Ratings
+            | {data[product_id].rating_count} Ratings
           </span>
         </button>
         <hr className="my-4" />
         <div className="text-xl">
-          <span className="mr-2 font-semibold">₹3480</span>
-          <span className="m-2 text-neutral-500">
-            MRP <s>₹5800</s>
+          <span className="mr-2 font-semibold">
+            ₹{data[product_id].discounted_price}
           </span>
-          <span className="m-2 font-semibold text-orange-600">(40% OFF)</span>
+          <span className="m-2 text-neutral-500">
+            MRP <s>₹{data[product_id].price}</s>
+          </span>
+          <span className="m-2 font-semibold text-orange-600">
+            ({data[product_id].discount}% OFF)
+          </span>
         </div>
         <p className="my-4 text-sm font-semibold text-green-600">
           inclusive of all taxes
         </p>
         <h3 className="my-4 text-xl font-semibold">SELECT SIZE</h3>
         <button className="p-4 text-sm font-semibold text-red-600 border border-red-600 rounded-full">
-          75-100 ML
+          {data[product_id].specifications.Sizes.map((size) => (
+            <span>{size}&nbsp;&nbsp;</span>
+          ))}
         </button>
         <div className="flex items-center my-6 text-xl font-semibold">
           <button className="flex items-center justify-center w-64 p-4 text-white bg-red-500 rounded-md hover:bg-red-400 border-1">
@@ -58,16 +65,20 @@ const ProductDetails = () => {
         <hr className="my-4" />
         <div className="p-2">
           <div className="">
-            <span className="mr-1 font-semibold">₹3480</span>
-            <span className="m-1 text-neutral-500">
-              <s>₹5800</s>
+            <span className="mr-1 font-semibold">
+              ₹{data[product_id].discounted_price}
             </span>
-            <span className="m-1 font-semibold text-orange-600">(40% OFF)</span>
+            <span className="m-1 text-neutral-500">
+              <s>₹{data[product_id].price}</s>
+            </span>
+            <span className="m-1 font-semibold text-orange-600">
+              ({data[product_id].discount}% OFF)
+            </span>
           </div>
           <p>
             Seller:{" "}
             <Link to="" className="font-semibold text-red-600">
-              Supercom Net
+              {data[product_id].seller_details.name}
             </Link>
           </p>
           <Link to="" className="text-sm font-semibold text-red-600">
