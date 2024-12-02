@@ -8,7 +8,6 @@ import LoginSignup from "./auth/LoginSignup.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import Bag from "./components/Bag.jsx";
 import ProductDetails from "./components/ProductDetails.jsx";
-import CategoryCardsContainer from "./components/category/CategoryCardsContainer.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -37,7 +36,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/category/:type",
-        element: <CategoryCardsContainer />,
+        element: <CardsContainer />,
       },
     ],
     errorElement: <ErrorPage />,

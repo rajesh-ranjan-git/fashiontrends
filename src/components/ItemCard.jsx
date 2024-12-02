@@ -7,6 +7,8 @@ const ItemCard = ({ item }) => {
   const [childVisible, setChildVisible] = useState(true);
   const navigate = useNavigate();
 
+  console.log(item.title);
+
   const handleProductDetails = (product_id) => {
     navigate(`/product/${product_id}`);
   };
@@ -49,7 +51,7 @@ const ItemCard = ({ item }) => {
             <p className="mt-1 text-neutral-500">
               Size:{" "}
               {item.specifications.Sizes.map((size, index) => (
-                <span>{size} </span>
+                <span key={size}>{size} </span>
               ))}
             </p>
           </div>
